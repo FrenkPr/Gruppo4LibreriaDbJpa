@@ -40,8 +40,5 @@ public class AutoreController
     }
 
     
-    @GetMapping("/{id}/libro")
-    public List<Libro> getLibroByAutore(@PathVariable Long id) {
-        return libroService.findByAutoreId(id);
-    }
+    
 }
