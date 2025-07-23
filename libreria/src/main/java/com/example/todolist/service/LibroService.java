@@ -1,10 +1,9 @@
 package com.example.todolist.service;
 
-import com.example.todolist.DTO.LibroDTO;
-import com.example.todolist.Mapper.LibroMapper;
+import com.example.todolist.dto.LibroDTO;
+import com.example.todolist.mapper.LibroMapper;
 import com.example.todolist.model.Autore;
 import com.example.todolist.model.Libro;
-import com.example.todolist.model.Utente;
 import com.example.todolist.repository.AutoreRepository;
 import com.example.todolist.repository.LibroRepository;
 import lombok.RequiredArgsConstructor;

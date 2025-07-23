@@ -1,7 +1,7 @@
 package com.example.todolist.controller;
 
-import com.example.todolist.DTO.LibroDTO;
-import com.example.todolist.Mapper.LibroMapper;
+import com.example.todolist.dto.LibroDTO;
+import com.example.todolist.mapper.LibroMapper;
 import com.example.todolist.model.Libro;
 import com.example.todolist.model.Recensione;
 import com.example.todolist.model.Utente;

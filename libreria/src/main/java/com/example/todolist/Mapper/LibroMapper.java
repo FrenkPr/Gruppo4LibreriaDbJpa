@@ -1,7 +1,6 @@
-package com.example.todolist.Mapper;
+package com.example.todolist.mapper;
 
-import com.example.todolist.DTO.LibroDTO;
-import com.example.todolist.model.Autore;
+import com.example.todolist.dto.LibroDTO;
 import com.example.todolist.model.Libro;
 
 public class LibroMapper {

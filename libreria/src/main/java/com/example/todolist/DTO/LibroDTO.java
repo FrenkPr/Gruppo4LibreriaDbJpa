@@ -1,6 +1,4 @@
-package com.example.todolist.DTO;
-
-import com.example.todolist.model.Autore;
+package com.example.todolist.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
