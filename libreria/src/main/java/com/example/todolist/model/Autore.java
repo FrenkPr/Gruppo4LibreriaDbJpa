@@ -12,8 +12,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @NoArgsConstructor //empty constructor
 @AllArgsConstructor //constructor with all params
 @Builder
-@Table(name = "users")
-public class User
+@Table(name = "autori")
+public class Autore
 {
     @Id //sets the "id" attribute as a primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto increment option
@@ -21,11 +21,11 @@ public class User
 
     //username non nullable field
     @Column(nullable = false)
-    private String username;
+    private String nome;
 
     //on "mappedBy" parameter we must pass the name of the related class.
     //The parameter is not case sensitive
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "autore", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore //avoids "OneToMany" "ManyToOne" loop
-    private List<Todo> todoList;
+    private List<Libro> libri;
 }
