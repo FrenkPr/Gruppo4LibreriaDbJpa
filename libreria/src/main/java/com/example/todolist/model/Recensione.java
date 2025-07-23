@@ -21,4 +21,9 @@ public class Recensione
     @ManyToOne
     @JoinColumn(name = "libro_id", nullable = false)
     private Libro libro;
+
+    //"JoinColumn" "name" property: "className_attributeName"
+    @ManyToOne
+    @JoinColumn(name = "utente_id", nullable = false)
+    private Utente utente;
 }

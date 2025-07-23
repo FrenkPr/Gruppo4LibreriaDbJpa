@@ -19,7 +19,7 @@ public class LibroController {
     private final RecensioneService recensioneService;
 
     @GetMapping
-    public List<Libro> getAllLibro() {
+    public List<Libro> getAllLibri() {
         return libroService.findAll();
     }
 

@@ -16,7 +16,7 @@ public class RecensioneController
     private final RecensioneService recensioneService;
 
     @GetMapping
-    public List<Recensione> getAllRecensione() {
+    public List<Recensione> getAllRecensioni() {
         return recensioneService.findAll();
     }
 

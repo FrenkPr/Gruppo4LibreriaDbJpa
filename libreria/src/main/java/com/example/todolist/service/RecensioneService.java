@@ -17,8 +17,12 @@ public class RecensioneService
         return recensioneRepository.findAll();
     }
 
-    public List<Recensione> findByLibroId(Long todoId) {
-        return recensioneRepository.findByLibroId(todoId);
+    public List<Recensione> findByLibroId(Long libroId) {
+        return recensioneRepository.findByLibroId(libroId);
+    }
+
+    public List<Recensione> findByUtenteId(Long utenteId) {
+        return recensioneRepository.findByUtenteId(utenteId);
     }
 
     public Recensione findById(Long id) {

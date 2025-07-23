@@ -19,7 +19,7 @@ public class AutoreController
     private final LibroService libroService;
 
     @GetMapping
-    public List<Autore> getAllAutore() {
+    public List<Autore> getAllAutori() {
         return autoreService.findAll();
     }
 
