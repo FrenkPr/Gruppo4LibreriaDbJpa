@@ -19,7 +19,7 @@ public class Utente
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto increment option
     private Long id;
 
-    @Id //sets the "id" attribute as a primary key
+    
     //username non nullable field
     @Column(nullable = false)
     private String username;
