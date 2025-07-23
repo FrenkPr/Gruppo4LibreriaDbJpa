@@ -21,10 +21,10 @@ public class LibroService
         return libroRepository.findByAutoreId(autoreId);
     }
 
-<<<<<<< Updated upstream
     public Libro findById(Long id) {
         return libroRepository.findById(id).orElseThrow(() -> new RuntimeException("Libro non trovato"));
-=======
+    }
+
     public LibroDTO create(LibroDTO libro) {
 
         Autore autore = autoreRepository.findById(libro.getAutore_id()).orElseThrow(() -> new RuntimeException("Autore non trovato."));
@@ -32,7 +32,6 @@ public class LibroService
         Libro todo = LibroMapper.toEntity(libro,autore);
         Libro saved = libroRepository.save(todo);
         return LibroMapper.toDTO(saved);
->>>>>>> Stashed changes
     }
 
     public Libro save(Libro todo) {
