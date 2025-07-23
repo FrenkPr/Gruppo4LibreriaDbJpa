@@ -1,7 +1,6 @@
 package com.example.todolist.dto;
 
 import java.util.List;
-import com.example.todolist.model.LibroDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
