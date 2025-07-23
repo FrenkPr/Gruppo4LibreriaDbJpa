@@ -8,8 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "commenti")
-public class Comment
+@Table(name = "recensioni")
+public class Recensione
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +19,6 @@ public class Comment
     private String testo;
 
     @ManyToOne
-    @JoinColumn(name = "todo_id", nullable = false)
-    private Todo todo;
+    @JoinColumn(name = "libro_id", nullable = false)
+    private Libro libro;
 }
