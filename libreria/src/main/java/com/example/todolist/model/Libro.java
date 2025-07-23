@@ -22,7 +22,7 @@ public class Libro
     
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "autore_id", nullable = false)
     private Autore autore;
 }
 
