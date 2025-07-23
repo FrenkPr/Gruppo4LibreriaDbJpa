@@ -1,12 +1,19 @@
 package com.example.todolist.controller;
 
+import com.example.todolist.DTO.LibroDTO;
+import com.example.todolist.Mapper.LibroMapper;
 import com.example.todolist.model.Libro;
 import com.example.todolist.model.Recensione;
+import com.example.todolist.model.Utente;
+import com.example.todolist.model.Autore;
+import com.example.todolist.service.AutoreService;
 import com.example.todolist.service.LibroService;
 import com.example.todolist.service.RecensioneService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.example.todolist.repository.LibroRepository;
+
 
 import java.util.List;
 
@@ -17,39 +24,38 @@ public class LibroController {
 
     private final LibroService libroService;
     private final RecensioneService recensioneService;
+    private final AutoreService autoreService;
+  
 
     @GetMapping
-    public List<Libro> getAllLibri() {
-        return libroService.findAll();
+    public ResponseEntity<List<LibroDTO>> getAll() {
+        return ResponseEntity.ok(libroService.getAll());
     }
 
     @GetMapping("/{id}")
-    public Libro getLibroById(@PathVariable Long id) {
-        return libroService.findById(id);
+    public ResponseEntity<LibroDTO> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(libroService.getById(id));
     }
 
     @PostMapping
-    public Libro createLibro(@RequestBody Libro libro) {
-        return libroService.save(libro);
+    public ResponseEntity<LibroDTO> create( @RequestBody LibroDTO dto) {
+        return ResponseEntity.ok(libroService.create(dto));
     }
 
     @PutMapping("/{id}")
-    public Libro updateLibro(@PathVariable Long id, @RequestBody Libro modificato) {
-        Libro esistente = libroService.findById(id);
-        esistente.setTitolo(modificato.getTitolo());
-        esistente.setAutore(modificato.getAutore());
-        return libroService.save(esistente);
+    public ResponseEntity<LibroDTO> update(@PathVariable Long id,  @RequestBody LibroDTO dto) {
+        return ResponseEntity.ok(libroService.update(id, dto));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteLibro(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         libroService.delete(id);
-        return ResponseEntity.ok("Libro eliminato");
+        return ResponseEntity.noContent().build();
     }
-
-    // ENDPOINT SPECIFICO: tutti i commenti legati a un ToDo
-    @GetMapping("/{id}/recensioni")
-    public List<Recensione> getRecensioniByLibro(@PathVariable Long id) {
-        return recensioneService.findByLibroId(id);
+    @GetMapping("/{id}/libro")
+    public List<Libro> getLibroByAutore(@PathVariable Long id) {
+        return libroService.findByAutoreId(id);
     }
+  
+   
 }
