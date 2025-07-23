@@ -32,8 +32,8 @@ public class AutoreController {
     }
 
     @PostMapping
-    public ResponseEntity<AutoreDTO> createAutore(@RequestBody Autore autore) {
-        return ResponseEntity.ok(autoreService.create(autore));
+    public ResponseEntity<AutoreDTO> createAutore(@RequestBody AutoreDTO dto) {
+        return ResponseEntity.ok(autoreService.create(dto));
     }
 
     @DeleteMapping("/{id}")
