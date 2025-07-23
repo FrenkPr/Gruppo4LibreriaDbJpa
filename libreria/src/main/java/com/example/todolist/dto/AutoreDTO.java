@@ -1,7 +1,7 @@
 package com.example.todolist.dto;
 
 import java.util.List;
-import com.example.todolist.model.Libro;
+import com.example.todolist.model.LibroDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +14,6 @@ import lombok.NoArgsConstructor;
 public class AutoreDTO {
     private Long id;
     private String nome;
-    private List<Libro> libri;
+    private List<LibroDTO> libri;
 }
 
